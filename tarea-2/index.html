@@ -7,17 +7,21 @@
 </head>
 <body>
   <header>
-    <h1>Bienvenido<span id="nombre-usuario-saludo"></span></h1>
+    <h1 id="saludo">Bienvenido</h1>
   </header>
 
   <body>
     <form id="entrada-bar" onsubmit="return false;">
       <input type="text" placeholder="Ingresá tu nombre" id="nombre-usuario"/>
+      <input type="text" placeholder="Ingresá tu segundo nombre" id="segundo-nombre-usuario" />
+      <input type="text" placeholder="Ingresá tu apellido" id="apellido-usuario" />
       <input type="number" placeholder="Ingresá tu edad" id="edad-usuario" />
-      <input type="submit" value="Ingresar" id="ingresar"/>
+      <button type="button" id="ingresar">Ingresar</button>
     </form>
 
     <div id="resultado"></div>
   </body>
+
+  <script type="text/javascript" src="js/tarea2.js"></script>
 </body>
 </html>
