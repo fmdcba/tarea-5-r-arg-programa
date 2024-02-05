@@ -2,13 +2,13 @@ const $botonAccion = document.querySelector('#ingresar');
 const $botonReinciar = document.querySelector('#reiniciar');
 
 $botonAccion.onclick = function (){
-  const $nombreUsuario = document.querySelector('#nombre-usuario').value;
-  const $segundoNombreUsuario = document.querySelector('#segundo-nombre-usuario').value;
-  const $apellidoUsuario = document.querySelector('#apellido-usuario').value;
-  const $edadUsuario = Number(document.querySelector('#edad-usuario').value);
+  const nombreUsuario = document.querySelector('#nombre-usuario').value;
+  const segundoNombreUsuario = document.querySelector('#segundo-nombre-usuario').value;
+  const apellidoUsuario = document.querySelector('#apellido-usuario').value;
+  const edadUsuario = Number(document.querySelector('#edad-usuario').value);
 
-  mostrarDatosUsuario($nombreUsuario, $segundoNombreUsuario, $apellidoUsuario, $edadUsuario);
-  darBienvenidaUsuario($nombreUsuario, $edadUsuario);
+  mostrarDatosUsuario(nombreUsuario, segundoNombreUsuario, apellidoUsuario, edadUsuario);
+  darBienvenidaUsuario(nombreUsuario, edadUsuario);
 }
 
 $botonReinciar.onclick = function(){
