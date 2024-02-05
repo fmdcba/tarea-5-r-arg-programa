@@ -1,0 +1,28 @@
+html {
+  background-color: grey;
+}
+
+body {
+  text-align: center;
+}
+
+h1 {
+  color: blue;
+}
+
+form{
+  font-size: large;
+  font-weight: bold;
+}
+
+#calcular-salario-mensual {
+  background-color: green;
+}
+
+#reiniciar {
+  background-color: red;
+}
+
+#salario-mensual {
+  color: blue;
+}
