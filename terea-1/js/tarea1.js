@@ -1,5 +1,5 @@
 const $botonCalcularSalario = document.querySelector('#calcular-salario-mensual');
-const $botonLimpiar = document.querySelector('#reinciar');
+const $botonLimpiar = document.querySelector('#reiniciar');
 
 $botonCalcularSalario.onclick = function (){
   const salarioAnual = Number(document.querySelector('#salario-anual').value);
