@@ -17,7 +17,7 @@ $botonCalcular.onclick = function(){
 
 function convertirASegundos(horas, minutos, segundos) {
   let segundosTotales = 0;
-  let CLASES_TOTALES = 5;
+  const CLASES_TOTALES = 5;
 
   for (let i = 0; i < CLASES_TOTALES; i++) {
     segundosTotales += Number(horas[i].value) * 3600;
@@ -30,10 +30,10 @@ function convertirASegundos(horas, minutos, segundos) {
 
 
 function formatearSegundosAISO(segundos){
-  let segundosTotales = segundos % 60;
-  let segundosAMinutos = (segundos - segundosTotales) / 60;
-  let minutosTotales = segundosAMinutos % 60;
-  let horasTotales = (segundosAMinutos - minutosTotales) / 60
+  const segundosTotales = segundos % 60;
+  const segundosAMinutos = (segundos - segundosTotales) / 60;
+  const minutosTotales = segundosAMinutos % 60;
+  const horasTotales = (segundosAMinutos - minutosTotales) / 60
 
   const tiempoFormateado = `horas: ${horasTotales} minutos: ${minutosTotales} segundos: ${segundosTotales}`;
 
