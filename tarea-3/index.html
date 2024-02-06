@@ -6,6 +6,58 @@
   <title>Calculadora de Clases</title>
 </head>
 <body>
+  <header>
+    <h1>Clases de r/Argentina Programa</h1>
+    <h2>Ingresá el tiempo de duración de cada clase (horas/minutos/segundos) y averiguá cuanto tiempo duran en total</h2>
+  </header>
+
+  <main>
+    <form>
+      <div>Clase 1: ...</div>
+      <label for="horas-clase-1">Horas</label>
+      <input type="number" class="horas" placeholder="horas" min="0" max="2" value="0"/>
+      <label for="minutos-clase-1">Minutos</label>
+      <input type="number" class="minutos" placeholder="minutos" min="0" max="59" value="0"/>
+      <label for="segundos-clase-1">Segundos</label>
+      <input type="number" class="segundos" placeholder="segundos" min="0" max="59" value="0"/>
+
+      <div>Clase 2: ...</div>
+      <label for="horas-clase-2">Horas</label>
+      <input type="number" class="horas" placeholder="horas" min="0" max="2" value="0"/>
+      <label for="minutos-clase-2">Minutos</label>
+      <input type="number" class="minutos" placeholder="minutos" min="0" max="59" value="0"/>
+      <label for="segundos-clase-2">Segundos</label>
+      <input type="number" class="segundos" placeholder="segundos" min="0" max="59" value="0"/>
+
+      <div>Clase 3: ...</div>
+      <label for="horas-clase-3">Horas</label>
+      <input type="number" class="horas" placeholder="horas" min="0" max="2" value="0"/>
+      <label for="minutos-clase-3">Minutos</label>
+      <input type="number" class="minutos" placeholder="minutos" min="0" max="59" value="0"/>
+      <label for="segundos-clase-3">Segundos</label>
+      <input type="number" class="segundos" placeholder="segundos" min="0" max="59" value="0"/>
+
+      <div>Clase 4: ...</div>
+      <label for="horas-clase-4">Horas</label>
+      <input type="number" class="horas" placeholder="horas" min="0" max="2" value="0"/>
+      <label for="minutos-clase-4">Minutos</label>
+      <input type="number" class="minutos" placeholder="minutos" min="0" max="59" value="0"/>
+      <label for="segundos-clase-4">Segundos</label>
+      <input type="number" class="segundos" placeholder="segundos" min="0" max="59" value="0"/>
+
+      <div>Clase 5: ...</div>
+      <label for="horas-clase-5">Horas</label>
+      <input type="number" class="horas" placeholder="horas" min="0" max="2" value="0"/>
+      <label for="minutos-clase-5">Minutos</label>
+      <input type="number" class="minutos" placeholder="minutos" min="0" max="59" value="0"/>
+      <label for="segundos-clase-5">Segundos</label>
+      <input type="number" class="segundos" placeholder="segundos" min="0" max="59" value="0"/>
+      <br>
+      <button type="button" onsubmit="return false;" id="calcular">Calcular</button>
+    </form>
+
+    <div>La duración total es de: <em id="resultado"></em></div>
+  </main>
   <script type="text/javascript" src="js/tarea3.js"></script>
 </body>
 </html>
