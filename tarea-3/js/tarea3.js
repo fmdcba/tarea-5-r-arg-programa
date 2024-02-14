@@ -31,9 +31,8 @@ function convertirASegundos(horas, minutos, segundos) {
 
 function formatearSegundosAISO(segundos){
   const segundosTotales = segundos % 60;
-  const segundosAMinutos = (segundos - segundosTotales) / 60;
-  const minutosTotales = segundosAMinutos % 60;
-  const horasTotales = (segundosAMinutos - minutosTotales) / 60
+  const minutosTotales = ((segundos - segundosTotales) / 60) % 60;
+  const horasTotales = (((segundos - segundosTotales) / 60) - minutosTotales) / 60;
 
   const tiempoFormateado = `horas: ${horasTotales} minutos: ${minutosTotales} segundos: ${segundosTotales}`;
 
@@ -42,8 +41,6 @@ function formatearSegundosAISO(segundos){
 
 function mostrarResultadoISO(resultado) {
   const $contenedorResultado = document.querySelector('#resultado');
-
-  console.log($contenedorResultado)
 
   $contenedorResultado.innerText = resultado;
 }
