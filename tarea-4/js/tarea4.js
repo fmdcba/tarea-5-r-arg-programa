@@ -64,17 +64,27 @@ function encontrarMenorNumero(numeros) {
 }
 
 function encontrarNumeroFrecuente(numeros){
-  let numeroFrecuente = 0;
+  let numerosOrdenados = numeros.sort();
+  let mayorFrecuencia = 0;
+  let numeroMasFrecuente = 0;
 
   for (let i = 0; i < numeros.length; i++) {
+    let contador = 0;
+
     for (let j = i + 1; j < numeros.length; j++) {
-      if (numeros[i] === numeros[j]) {
-        numeroFrecuente = numeros[i]
+      if (numerosOrdenados[i] === numerosOrdenados[j]) {
+        numeroMasFrecuente = numerosOrdenados[i];
+        mayorFrecuencia++;
+        contador++;
       }
+    }
+
+    if (contador > mayorFrecuencia) {
+      numeroMasFrecuente = numerosOrdenados[i];
     }
   }
 
-  return numeroFrecuente;
+  return numeroMasFrecuente;
 }
 
 function mostrarNumeros(promedio, mayor, menor, frecuente) {
