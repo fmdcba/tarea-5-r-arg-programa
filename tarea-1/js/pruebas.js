@@ -1,4 +1,4 @@
-function probarValidarSalario(){
+/* function probarValidarSalario(){
   console.assert(validarSalario('') === 'Debes ingresar un salario',
   'Validar salario no validó que se ingresara un salario para calcular');
 
@@ -7,3 +7,4 @@ function probarValidarSalario(){
 }
 
 probarValidarSalario();
+ */

@@ -5,35 +5,25 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Clase 5</title>
+    <title>Clase 5: Tarea 1</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <header>
-    <h1>Calculador de Salarios</h1>
+    <h1>Calculador de Salario Mensual</h1>
   </header>
 
-  <main class="container">
-    <form class="column-1">
-      <p>No sabes cuanto cobrás mensualmente? Ingresá tu salario anual y averigualo</p>
-      <input type="number" id="salario-anual" placeholder="Ej.: 100000"/>
-      <button type="button" id="calcular-salario-mensual">Calcular</button>
-      <label for="salario-anual" class="mensual">Salario mensual:</label>
-        <input type="number" disabled id="salario-mensual"/>
-      <button type="reset" id="reiniciar">Limpiar</button>
+  <main>
+    <form>
+      <p>Ingresá tu salario anual y calculá así tu salario mensual:</p>
+      <label>Salario Anual:</label>
+      <input type="number" id="salario-anual" placeholder="Ej: 100000"/>
+      <label>Salario mensual:</label>
+      <input disabled type="number" id="salario-mensual"/>
+      <button id="calcular-salario-mensual">Calcular</button>
+      <button type="reset">Limpiar</button>
     </form>
-
-    <div class="column-2">
-      <p id="dinero">Mejorar Sueldo</p>
-      <img src="imgs/8-bit flying-money.gif">
-      <a href="https://www.linkedin.com/">
-        <button >Encontrá nuevas <em>oportunidades</em></button>
-      </a>
-    </div>
   </main>
-
-  <ul id="errores"></ul>
-
 
   <script type="text/javascript" src="js/tarea1.js"></script>
   <script type="text/javascript" src="js/pruebas.js"></script>
