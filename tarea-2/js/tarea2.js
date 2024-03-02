@@ -52,3 +52,43 @@ function borrarResultadoAnterior(){
 function borrarNombreUsuario(){
   document.querySelector('#saludo-nombre-usuario').textContent = '';
 }
+
+function validarNombre(nombre){
+  if (nombre.length === 0) {
+    return 'El campo nombre debe tener al menos 1 caracter';
+  }
+
+  if (nombre.length > 36) {
+    return 'El campo nombre debe tener menos de 36 caracteres';
+  }
+}
+
+function validarSegundoNombre(segundoNombre) {
+  if (segundoNombre.length === 0) {
+    return 'El campo segundo nombre debe tener al menos 1 caracter';
+  }
+
+  if (segundoNombre.length > 36) {
+    return 'El campo segundo nombre debe tener menos de 36 caracteres'
+  }
+}
+
+function validarApellido(apellido) {
+  if (apellido.length === 0) {
+    return 'El campo apellido debe tener al menos 1 caracter';
+  }
+
+  if (apellido.length > 36) {
+    return 'El campo apellido debe tener menos de 36 caracteres'
+  }
+}
+
+function validarEdad(edad) {
+  if (edad <= 0) {
+    return 'El campo edad debe ser mayor a 0';
+  }
+
+  if (edad >= 130) {
+    return 'El campo edad no puede ser mayor a 130';
+  }
+}
