@@ -1,106 +1,54 @@
-const $botonAccion = document.querySelector('#ingresar');
-const $botonReinciar = document.querySelector('#reiniciar');
-
-$botonAccion.onclick = function (){
+document.querySelector('#entrar-al-bar').onclick = function(e) {
   const $nombreUsuario = document.querySelector('#nombre-usuario');
   const $segundoNombreUsuario = document.querySelector('#segundo-nombre-usuario');
   const $apellidoUsuario = document.querySelector('#apellido-usuario');
   const $edadUsuario = document.querySelector('#edad-usuario');
-  const nombreUsuario = document.querySelector('#nombre-usuario');
-  const segundoNombreUsuario = document.querySelector('#segundo-nombre-usuario').value;
-  const apellidoUsuario = document.querySelector('#apellido-usuario').value;
-  const edadUsuario = Number(document.querySelector('#edad-usuario').value);
+  const nombreUsuario = $nombreUsuario.value;
+  const segundoNombreUsuario = $segundoNombreUsuario.value;
+  const apellidoUsuario = $apellidoUsuario.value;
+  const edadUsuario = Number($edadUsuario.value);
 
-  if (validarDatos($nombreUsuario, $segundoNombreUsuario, $apellidoUsuario, $edadUsuario) !== '') {
-    mostrarDatosUsuario(nombreUsuario, segundoNombreUsuario, apellidoUsuario, edadUsuario);
-    darBienvenidaUsuario(nombreUsuario, edadUsuario);
+  borrarResultadoAnterior();
+  mostrarResultado(nombreUsuario, segundoNombreUsuario, apellidoUsuario, verificarEntradaBar(edadUsuario));
 
-    ocultarError($nombreUsuario);
-    ocultarError($segundoNombreUsuario);
-    ocultarError($apellidoUsuario);
-    ocultarError($edadUsuario);
+  e.preventDefault();
+}
+
+document.querySelector('#reiniciar').onclick = function(e) {
+
+  borrarResultadoAnterior();
+  borrarNombreUsuario();
+
+  e.preventDefault()
+}
+
+function verificarEntradaBar(edad){
+  if (edad >= 18) {
+    return 'si';
+  } else {
+    return 'no';
   }
-
 }
 
-$botonReinciar.onclick = function(){
-  document.querySelector('#saludo').innerText = 'El Bar de R-Arg Programa';
-  document.querySelector('#resultado').innerText = '';
-  document.querySelector('#nombre-usuario').value = '';
-  document.querySelector('#segundo-nombre-usuario').value = '';
-  document.querySelector('#apellido-usuario').value = '';
-  document.querySelector('#edad-usuario').value = '';
+function mostrarResultado(nombre, segundoNombre, apellido, edad){
+  document.querySelector('#saludo-nombre-usuario').textContent = nombre;
+
+  const $textoResultado = document.createElement('p');
+  $textoResultado.id = 'resultado';
+  $textoResultado.textContent = `Hola ${nombre} ${segundoNombre} ${apellido}, ${edad} podés pasar al bar`;
+
+  const $contenedorResultado = document.querySelector('#contenedor-resultado');
+  $contenedorResultado.appendChild($textoResultado);
 }
 
-function mostrarDatosUsuario(nombre, segundoNombre, apellido, edad){
+function borrarResultadoAnterior(){
   const $resultado = document.querySelector('#resultado');
 
-  $resultado.innerText = `Hola ${nombre} ${segundoNombre} ${apellido}, tu edad es ${edad}.`;
-}
-
-function darBienvenidaUsuario(nombre, edad){
-  const $saludo = document.querySelector('#saludo');
-
-
-  if (edad >= 18) {
-    $saludo.innerText = `Bienvenido, ${nombre}! Podés pasar al bar 👌 y disfrutar de tu cerveza 🍻`;
-  } else {
-    $saludo.innerText = `Bienvenido ${nombre}! lamentablemente no podés pasar al bar porque solo tenés ${edad} años ❌`
+  if ($resultado !== null) {
+    $resultado.remove();
   }
 }
 
-function validarIdentificacion(identificacion){
-  if (identificacion.length === 0) {
-    return 'Este campo no puede estar vacío';
-  }
-
-  if (identificacion.length > 40 ) {
-    return 'Este campo no admite mas de 40 caracteres';
-  }
-
-  return '';
-}
-
-function validarDatos(nombre, segundoNombre, apellido, edad) {
-  if (procesarValidacion(validarIdentificacion(nombre.value))) {
-    resaltarError(nombre);
-  };
-  if (procesarValidacion(validarIdentificacion(segundoNombre.value))) {
-    resaltarError(nombre);
-  };
-  if (procesarValidacion(validarIdentificacion(apellido.value))) {
-    resaltarError(nombre);
-  };
-  if (procesarValidacion(validarIdentificacion(Number(edad.value)))) {
-    resaltarError(nombre);
-  };
-
-  return '';
-}
-
-function procesarValidacion(validacion){
-  const $contenedorErrores = document.querySelector('#errores');
-  const $erroresPrevios = $contenedorErrores.children[0];
-
-  if ($erroresPrevios) {
-    $erroresPrevios.remove()
-  }
-
-  if(validacion) {
-    const $error = document.createElement('li');
-    $error.textContent = validacion;
-    $error.id = 'error';
-
-    $contenedorErrores.appendChild($error);
-  } else {
-    return '';
-  }
-}
-
-function resaltarError(campo){
-  campo.className = 'error';
-}
-
-function ocultarError(campo){
- campo.className = '';
+function borrarNombreUsuario(){
+  document.querySelector('#saludo-nombre-usuario').textContent = '';
 }
